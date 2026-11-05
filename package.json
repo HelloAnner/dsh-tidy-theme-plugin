@@ -1,0 +1,29 @@
+{
+  "name": "dsh-tidy-theme-plugin",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Tidy theme for the DeepSeek Harness Web client: remove the sidebar brand lockup and promote New Session to the top row.",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "README.md"
+  ],
+  "dsh": {
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-renderer",
+        "@deepseek-ai/dsh-client-ui-sidebar"
+      ]
+    }
+  },
+  "scripts": {
+    "check": "node --check lib/index.js && node --check lib/client.js"
+  }
+}
